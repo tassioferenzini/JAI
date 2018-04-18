@@ -40,7 +40,7 @@ public class PublicacaoDAO extends EntidadeDAO {
 
     public Publicacoes findPerson(Map mapKeyValue) {
         DBObject dbObject = findOne(mapKeyValue);
-        Publicacoes p = new PublicacaoConverte().converterPessoa(dbObject);
+        Publicacoes p = new PublicacaoConverte().converterPublicacoes(dbObject);
         return p;
     }
 
@@ -48,7 +48,7 @@ public class PublicacaoDAO extends EntidadeDAO {
         List dbObject = findAll();
         List ps = new ArrayList();
         for (Object dbo : dbObject) {
-            Publicacoes p = new PublicacaoConverte().converterPessoa((DBObject) dbo);
+            Publicacoes p = new PublicacaoConverte().converterPublicacoes((DBObject) dbo);
             ps.add(p);
         }
         return ps;

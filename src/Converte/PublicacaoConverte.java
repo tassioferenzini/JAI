@@ -25,7 +25,7 @@ public class PublicacaoConverte {
         return mapPublicacao;
     }
 
-    public Publicacoes converterPessoa(DBObject dbo) {
+    public Publicacoes converterPublicacoes(DBObject dbo) {
         Publicacoes pub = new Publicacoes();
         pub.setId((ObjectId) dbo.get("_id"));
         pub.setAutor((List) dbo.get("autor"));
