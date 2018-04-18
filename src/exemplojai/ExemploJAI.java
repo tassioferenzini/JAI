@@ -27,13 +27,13 @@ public class ExemploJAI {
      */
     public static void main(String[] args) {
 
-       //save();
-       //update();
-       //delete();
- 
+        //save();
+        //savePub();
+        //update();
+        //delete();
         System.exit(0);
     }
-    
+
     private static void save() {
         List autor = new ArrayList();
         autor.add("Tassio");
@@ -45,12 +45,12 @@ public class ExemploJAI {
         Endereco end = new Endereco("Rua", "Azul", 230, "Vista Alegre", "Bananal", "12365-000");
         Pessoa pessoa = new Pessoa("João", "de Souza", "", fone, end);
         new PessoaDAO().save(pessoa);
-        
+
         Telefone fone2 = new Telefone("3232324455", "32988334400");
         Endereco end2 = new Endereco("Av", "7", 120, "Mundo Novo", "Rio de Janeiro", "12460-000");
         Pessoa pessoa2 = new Pessoa("Luiz", "Almeida", "luiz@mail.com", fone2, end2);
         new PessoaDAO().save(pessoa2);
-        
+
         Telefone fone3 = new Telefone(" ", " ");
         Endereco end3 = new Endereco("Rua", "Branco", 30, "Alegre", "Jardim", "14365-000");
         Pessoa pessoa3 = new Pessoa("Carlos", "de Souza", "", fone3, end);
@@ -60,6 +60,27 @@ public class ExemploJAI {
         for (Object pes : pessoas) {
             System.out.println(pes.toString());
         }
+    }
+
+    private static void savePub() {
+
+        List autor = new ArrayList();
+        autor.add("Tassio");
+        autor.add("Humberto");
+        Publicacoes pub = new Publicacoes("Using Ontology and Data Provenance to Improve Software Processes", autor);
+
+        List autor2 = new ArrayList();
+        autor2.add("Tassio");
+        Publicacoes pub2 = new Publicacoes("A Software Framework for Data Provenance", autor2);
+
+        List autor3 = new ArrayList();
+        autor3.add("Stonebraker");
+        Publicacoes pub3 = new Publicacoes("Newsql: An alternative to nosql and old sql for new oltp apps", autor3);
+
+        new PublicacaoDAO().save(pub);
+        new PublicacaoDAO().save(pub2);
+        new PublicacaoDAO().save(pub3);
+
     }
 
     private static void update() {
@@ -88,6 +109,6 @@ public class ExemploJAI {
         for (Object pes : pessoas) {
             System.out.println(pes.toString());
         }
-    } 
+    }
 
 }

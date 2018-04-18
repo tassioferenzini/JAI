@@ -175,13 +175,12 @@ public class ExemploJAI_Simples {
         MongoClientURI mongoURI = new MongoClientURI("mongodb://jai:jai@localhost:27017/?authSource=JAI");
         MongoClient mongodb = new MongoClient(mongoURI);
         MongoDatabase db = mongodb.getDatabase("JAI");
-        
-        
         MongoCollection<BasicDBObject> colecaoPessoa = db.getCollection("Pessoa", BasicDBObject.class);
 
         for (BasicDBObject doc : colecaoPessoa.find()) {
             System.out.println(doc);
         }
+        
     }
 
 }
